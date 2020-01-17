@@ -39,7 +39,14 @@
     </div>
 
     <div class="row" style="background-color: #DCDCDC">
-      <div class="col" style="text-align:center; line-height:50px"><%= image_tag("alexcobb_logo_end.png", size: "94x25") %></div>
+      <div class="col-4 offset-4" style="text-align:center; line-height:50px"><a href="/login"><%= image_tag("alexcobb_logo_end.png", size: "94x25") %></a></div>
+      <div class="col-4" style="text-align:right; font-size:12px;">
+        <p>
+        <% if logged_in? %><%= link_to 'Logout', logout_path(session),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %><%end%>
+        </p>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
