@@ -20,7 +20,7 @@
     <div class="row" style="background-color: #DCDCDC; line-height: 55px;">
 
       <div class="col">
-        <p style="text-align:right; line-height: 55px;"><strong><a href="/articles"><i class="material-icons" style="vertical-align: middle; color: black;">post_add</i>Blog</a></strong></p>
+        <p style="text-align:right; line-height: 55px;"><strong><a href="/articles"><i class="material-icons" style="vertical-align: middle; color: black;">post_add</i>thoughts</a></strong></p>
       </div>
 
       <div class="col" style="text-align:center;">
@@ -28,7 +28,7 @@
       </div>
 
       <div class="col">
-        <p style="text-align:left; line-height: 55px"><strong><a href="#"><i class="material-icons" style="vertical-align: middle; color: black;">directions_run</i>Running</a></strong></p>
+        <p style="text-align:left; line-height: 55px"><strong><a href="#"><i class="material-icons" style="vertical-align: middle; color: black;">directions_run</i>running</a></strong></p>
       </div>
 
     </div>
@@ -40,11 +40,11 @@
 
     <div class="row" style="background-color: #DCDCDC">
       <div class="col-4 offset-4" style="text-align:center; line-height:50px"><a href="/login"><%= image_tag("alexcobb_logo_end.png", size: "94x25") %></a></div>
-      <div class="col-4" style="text-align:right; font-size:12px;">
+      <div class="col-3" style="text-align:right; font-size:12px;">
         <p>
         <% if logged_in? %><%= link_to 'Logout', logout_path(session),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %><%end%>
+              method: :delete %>
+        <%end%>
         </p>
       </div>
     </div>
