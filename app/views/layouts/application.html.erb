@@ -6,15 +6,21 @@
     <%= csp_meta_tag %>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      a {
+        color: #e58a24
+      }
+    </style>
   </head>
 
-  <body>
-    <div class="row" style="background-color: #F5F5F5">
+  <body style="background-color: #F5F5F5;">
+    <div class="row" style="background-color: #DCDCDC; line-height: 55px;">
 
       <div class="col">
-        <p style="text-align:right; line-height: 55px"><strong><%= link_to 'Blog', controller: 'articles' %></strong></p>
+        <p style="text-align:right; line-height: 55px;"><strong><a href="/articles"><i class="material-icons" style="vertical-align: middle; color: black;">post_add</i>Blog</a></strong></p>
       </div>
 
       <div class="col" style="text-align:center;">
@@ -22,7 +28,7 @@
       </div>
 
       <div class="col">
-        <p style="text-align:left; line-height: 55px"><strong><a href="#">Running</a></strong></p>
+        <p style="text-align:left; line-height: 55px"><strong><a href="#"><i class="material-icons" style="vertical-align: middle; color: black;">directions_run</i>Running</a></strong></p>
       </div>
 
     </div>
@@ -32,7 +38,7 @@
 
     </div>
 
-    <div class="row" style="background-color: #F5F5F5">
+    <div class="row" style="background-color: #DCDCDC">
       <div class="col" style="text-align:center; line-height:50px"><%= image_tag("alexcobb_logo_end.png", size: "94x25") %></div>
     </div>
 
