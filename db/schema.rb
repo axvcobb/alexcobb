@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_17_044318) do
+ActiveRecord::Schema.define(version: 2020_01_17_051914) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -52,11 +52,18 @@ ActiveRecord::Schema.define(version: 2020_01_17_044318) do
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
+  create_table "labels", force: :cascade do |t|
+    t.string "label"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "label"
   end
 
   create_table "users", force: :cascade do |t|

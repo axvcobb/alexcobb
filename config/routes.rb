@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  post 'label', to: 'labels#create'
+
   root 'welcome#index'
 end

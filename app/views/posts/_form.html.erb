@@ -25,7 +25,21 @@
   </p>
 
   <p>
+    <%= form.label :label %><br>
+    <%= form.select(:label) do %>
+      <%= options_from_collection_for_select(Label.all, :label, :label) %>
+    <% end %>
+  </p>
+
+  <p>
     <%= form.submit 'Submit', :class => 'btn btn-primary' %>
   </p>
 
+<% end %>
+
+<br>
+
+<%= form_with scope: :label, url: label_path, local: true do |form| %>
+  <%= form.text_field(:label) %>
+  <%= form.submit("Add Label") %>
 <% end %>

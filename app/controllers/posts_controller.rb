@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to @post
+      redirect_to posts_path
     else
       render 'new'
     end
@@ -31,8 +31,8 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-    if @post.update(article_params)
-      redirect_to @post
+    if @post.update(post_params)
+      redirect_to posts_path
     else
       render 'edit'
     end
@@ -47,6 +47,6 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :text)
+      params.require(:post).permit(:title, :text, :label)
     end
 end
