@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gun_time: 2020-01-20 11:59:47
+  chip_time: 2020-01-20 11:59:47
+  race: one
+
+two:
+  gun_time: 2020-01-20 11:59:47
+  chip_time: 2020-01-20 11:59:47
+  race: two
