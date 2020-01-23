@@ -8,6 +8,9 @@
   </div>
 <% end %>
 <br>
+<% if !@posts.present? %>
+ <h2 style="text-align:center;">No posts...yet :)</h2>
+<% end %>
 <% @posts.each do |post| %>
 <div class="row">
   <div class="col-8 offset-2">
