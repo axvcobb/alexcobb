@@ -1,0 +1,51 @@
+<%= form_with model: @race, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label :event %><br>
+    <%= form.select(:event) do %>
+      <%= options_from_collection_for_select(Event.all, :event, :event) %>
+    <% end %>
+  </p>
+
+  <p>
+    <%= form.label :race_date %><br>
+    <%= form.text_field :race_date, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label :city %><br>
+    <%= form.text_field :city, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label :state %><br>
+    <%= form.text_field :state, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label :website %><br>
+    <%= form.text_field :website, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label :comment %><br>
+    <%= form.text_area :comment, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.submit 'Submit', :class => 'btn btn-primary' %>
+  </p>
+
+<% end %>
+
+<br>
+
+<%= form_with scope: :event, url: event_path, local: true do |form| %>
+  <%= form.text_field(:event) %>
+  <%= form.submit("Add Event") %>
+<% end %>

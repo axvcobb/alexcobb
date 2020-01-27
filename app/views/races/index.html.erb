@@ -1,1 +1,24 @@
-<h1>RUNNING</h1>
+<!-- Running Homepage -->
+<% if logged_in? %>
+  <br>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <%= link_to 'New Race', new_race_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
+<% if !@races.present? %>
+  <h2 style="text-align:center;">No races...yet :)</h2>
+<% end %>
+<% @races.each do |race| %>
+<div class="row">
+  <div class="col-8 offset-2">
+    <div class="card">
+      <div class="card-header">
+        <h3><%= race.name %></h3>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<% end %>

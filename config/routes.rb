@@ -9,11 +9,12 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :running, :controller => "races", :path => "running" do
+  resources :races, :controller => "races", :path => "running" do
     resources :results
   end
 
   post 'label', to: 'labels#create'
+  post 'event', to: 'events#create'
 
   root 'welcome#index'
 end
