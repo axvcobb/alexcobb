@@ -1,4 +1,5 @@
 <!-- Running Homepage -->
+<br>
 <% if logged_in? %>
   <br>
   <div class="row">
@@ -7,10 +8,64 @@
     </div>
   </div>
 <% end %>
-<% if !@races.present? %>
+
+<% if !@upcoming_races.present? %>
   <h2 style="text-align:center;">No races...yet :)</h2>
 <% end %>
-<% @races.each do |race| %>
+<div class="row">
+    <div class="col-10 offset-1">
+        <h1 style="text-align:center;">Personal Records</h1>
+    </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-10 offset-1">
+    <div class="card-group">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title" style="text-align:center;">5k</h3>
+          <hr>
+          <h5 class="card-text" style="text-align:center;">25:34</h5>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Digital Dash 5k</small>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title" style="text-align:center;">10k</h3>
+          <hr>
+          <h5 class="card-text" style="text-align:center;">52:07</h5>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Beltline Eastside 10k</small>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title" style="text-align:center;">Half Marathon</h3>
+          <hr>
+          <h5 class="card-text" style="text-align:center;">--</h5>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Publix Half Marathon</small>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title" style="text-align:center;">Marathon</h3>
+          <hr>
+          <h5 class="card-text" style="text-align:center;">--</h5>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Disney Marathon Weekend</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<% @upcoming_races.each do |race| %>
 <div class="row">
   <div class="col-8 offset-2">
     <div class="card">
