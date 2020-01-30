@@ -5,3 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+events = Event.create([{ event: '5k' }, { event: '4 Miler'}, { event: '10k' }, { event: '12k' }, { event: 'Half Marathon'}, { event: 'Marathon' } ])

@@ -3,7 +3,17 @@ class RacesController < ApplicationController
   skip_before_action :authorized, only: [:index]
 
   def index
-    @races = Race.all
+    @upcoming_races = Race.all
+
+    @past_races = Race.all
+
+    @five_k_pr = Race.find_by event: '5k'
+
+    @ten_k_pr = Race.find_by event: '10k'
+
+    @half_pr = Race.find_by event: 'Half Marathon'
+
+    @full_pr =  Race.find_by event: 'Marathon'
   end
 
   def new
