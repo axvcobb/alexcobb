@@ -7,13 +7,11 @@
 
   <p>
     <%= form.label :event %><br>
-    <%= form.select(:event) do %>
-      <%= options_from_collection_for_select(Event.all, :event, :event) %>
-    <% end %>
+    <%= form.collection_select(:event, Event.all, :event, :event) %>
   </p>
 
   <p>
-    <%= form.label :race_date %><br>
+    <%= form.label :race_date %><small><i> (yyyy-mm-dd hh:mm:ss)</i></small><br>
     <%= form.text_field :race_date, class: 'form-control' %>
   </p>
 
