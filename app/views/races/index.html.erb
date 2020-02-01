@@ -70,7 +70,7 @@
   <div class="col-8 offset-2">
     <div class="card">
       <div class="card-header">
-        <h3><%= race.name %> - <%= race.event %></h3>
+        <h3><%= race.name %> - <%= race.event %></h3><br>
         <% if logged_in? %>
           <%= link_to 'Edit', edit_race_path(race), class: 'btn btn-success' %>
           <%= link_to 'Delete', race_path(race),

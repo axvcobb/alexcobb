@@ -1,0 +1,17 @@
+<% form_with(model: [ @race, @race.result.build ],
+local: true) do |form| %>
+
+  <p>
+      <%= form.label :gun_time %><br>
+      <%= form.text_field :gun_time %>
+  </p>
+  <p>
+      <%= form.label :chip_time %><br>
+      <%= form.text_field :chip_time %>
+  </p>
+
+  <p>
+      <%= form.submit %>
+  </p>
+
+<% end %>
