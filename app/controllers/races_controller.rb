@@ -3,10 +3,11 @@ class RacesController < ApplicationController
   skip_before_action :authorized, only: [:index]
 
   def index
-    @upcoming_races = Race.all
+    @upcoming_races = Race.where("race_date >= ?", DateTime.now).order(:race_date)
 
-    @past_races = Race.all
+    @past_races = Race.where("race_date < ?", DateTime.now).or(Race.where(race_date: nil)).order(race_date: :desc)
 
+=begin
     @five_k_pr = Race.find_by event: '5k'
 
     @ten_k_pr = Race.find_by event: '10k'
@@ -14,6 +15,7 @@ class RacesController < ApplicationController
     @half_pr = Race.find_by event: 'Half Marathon'
 
     @full_pr =  Race.find_by event: 'Marathon'
+=end
   end
 
   def new

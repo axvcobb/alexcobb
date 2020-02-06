@@ -22,10 +22,10 @@
         <div class="card-body">
           <h3 class="card-title" style="text-align:center;">5k</h3>
           <hr>
-          <h5 class="card-text" style="text-align:center;">25:34</h5>
+          <h5 class="card-text" style="text-align:center;">22:36</h5>
         </div>
         <div class="card-footer">
-          <small class="text-muted">Digital Dash 5k</small>
+          <small class="text-muted">Hearts and Soles 5k - 2/1/20</small>
         </div>
       </div>
       <div class="card">
@@ -35,7 +35,7 @@
           <h5 class="card-text" style="text-align:center;">52:07</h5>
         </div>
         <div class="card-footer">
-          <small class="text-muted">Beltline Eastside 10k</small>
+          <small class="text-muted">Beltline Eastside 10k - 12/7/19</small>
         </div>
       </div>
       <div class="card">
@@ -45,7 +45,7 @@
           <h5 class="card-text" style="text-align:center;">--</h5>
         </div>
         <div class="card-footer">
-          <small class="text-muted">Publix Half Marathon</small>
+          <small class="text-muted">Publix Half Marathon - 3/1/20</small>
         </div>
       </div>
       <div class="card">
@@ -55,31 +55,67 @@
           <h5 class="card-text" style="text-align:center;">--</h5>
         </div>
         <div class="card-footer">
-          <small class="text-muted">Disney Marathon Weekend</small>
+          <small class="text-muted">TBD</small>
         </div>
       </div>
     </div>
   </div>
 </div>
 <br>
-<% if !@upcoming_races.present? %>
-  <h2 style="text-align:center;">No races...yet :)</h2>
-<% end %>
-<% @upcoming_races.each do |race| %>
 <div class="row">
-  <div class="col-8 offset-2">
+  <div class="col-6">
     <div class="card">
       <div class="card-header">
-        <h3><%= race.name %> - <%= race.event %></h3><br>
-        <% if logged_in? %>
-          <%= link_to 'Edit', edit_race_path(race), class: 'btn btn-success' %>
-          <%= link_to 'Delete', race_path(race),
-              data: { confirm: 'Delete this post?' },
-              method: :delete, class: 'btn btn-danger' %>
+        <h3 style="text-align:center">Upcoming Races</h3>
+      </div>
+      <div class="card-body">
+        <% if !@upcoming_races.present? %>
+          <h4 style="text-align:center;">No races currently scheduled :)</h4>
         <% end %>
+        <ul class="list-group list-group-flush">
+            <% @upcoming_races.each do |race| %>
+              <li class="list-group-item">
+                <%= race.name %>
+                <% if race.race_date.present? %> - <%= race.race_date.strftime("%b %e, %Y") %><% end %>
+                <span class="badge badge-secondary"><%= race.event %></span>
+                <% if logged_in? %>
+                  <%= link_to 'Edit', edit_race_path(race) %>
+                  <%= link_to 'Delete', race_path(race),
+                      data: { confirm: 'Delete this race?' },
+                      method: :delete %>
+                <% end %>
+              </li>
+            <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header">
+        <h3 style="text-align:center">Past Races</h3>
+      </div>
+      <div class="card-body">
+        <% if !@past_races.present? %>
+          <h4 style="text-align:center;">No races...yet :)</h4>
+        <% end %>
+        <ul class="list-group list-group-flush">
+            <% @past_races.each do |race| %>
+              <li class="list-group-item">
+                <%= race.name %>
+                <% if race.race_date.present? %> - <%= race.race_date.strftime("%b %e, %Y") %><% end %>
+                <span class="badge badge-secondary"><%= race.event %></span>
+                <% if logged_in? %>
+                  <%= link_to 'Edit', edit_race_path(race) %>
+                  <%= link_to 'Delete', race_path(race),
+                      data: { confirm: 'Delete this race?' },
+                      method: :delete %>
+                <% end %>
+              </li>
+            <% end %>
+        </ul>
       </div>
     </div>
   </div>
 </div>
 <br>
-<% end %>

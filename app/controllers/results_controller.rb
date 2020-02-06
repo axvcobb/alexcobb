@@ -1,5 +1,5 @@
 class ResultsController < ApplicationController
-
+=begin
   def new
     @race = Race.find(params[:race_id])
     @result = @race.result.new
@@ -15,4 +15,5 @@ class ResultsController < ApplicationController
     def result_params
       params.require(:result).permit(:gun_time, :chip_time)
     end
+=end
 end
