@@ -11,7 +11,7 @@
 
 <div class="row">
     <div class="col-10 offset-1">
-        <h1 style="text-align:center;">Personal Records</h1>
+        <h1 class="centered">Personal Records</h1>
         <hr>
     </div>
 </div>
@@ -20,9 +20,9 @@
     <div class="card-group">
       <div class="card">
         <div class="card-body">
-          <h3 class="card-title" style="text-align:center;">5k</h3>
+          <h3 class="card-title centered">5k</h3>
           <hr>
-          <h5 class="card-text" style="text-align:center; color: #e58a24">22:36</h5>
+          <h5 class="card-text centered orange">22:36</h5>
         </div>
         <div class="card-footer">
           <small class="text-muted">Hearts and Soles 5k - 2/1/20</small>
@@ -30,9 +30,9 @@
       </div>
       <div class="card">
         <div class="card-body">
-          <h3 class="card-title" style="text-align:center;">10k</h3>
+          <h3 class="card-title centered">10k</h3>
           <hr>
-          <h5 class="card-text" style="text-align:center; color: #e58a24">52:07</h5>
+          <h5 class="card-text centered orange">52:07</h5>
         </div>
         <div class="card-footer">
           <small class="text-muted">Beltline Eastside 10k - 12/7/19</small>
@@ -40,9 +40,9 @@
       </div>
       <div class="card">
         <div class="card-body">
-          <h3 class="card-title" style="text-align:center;">Half Marathon</h3>
+          <h3 class="card-title centered">Half Marathon</h3>
           <hr>
-          <h5 class="card-text" style="text-align:center;">--</h5>
+          <h5 class="card-text centered orange">--</h5>
         </div>
         <div class="card-footer">
           <small class="text-muted">Publix Half Marathon - 3/1/20</small>
@@ -50,9 +50,9 @@
       </div>
       <div class="card">
         <div class="card-body">
-          <h3 class="card-title" style="text-align:center;">Marathon</h3>
+          <h3 class="card-title centered">Marathon</h3>
           <hr>
-          <h5 class="card-text" style="text-align:center;">--</h5>
+          <h5 class="card-text centered orange">--</h5>
         </div>
         <div class="card-footer">
           <small class="text-muted">TBD</small>
@@ -63,14 +63,14 @@
 </div>
 <br>
 <div class="row">
-  <div class="col-6">
+  <div class="col-md-6 col-sm-12 col-xs-12">
     <div class="card">
       <div class="card-header">
-        <h3 style="text-align:center">Upcoming Races</h3>
+        <h3 class="centered">Upcoming Races</h3>
       </div>
       <div class="card-body">
         <% if !@upcoming_races.present? %>
-          <h4 style="text-align:center;">No races currently scheduled :)</h4>
+          <h4 class="centered">No races currently scheduled :)</h4>
         <% end %>
         <ul class="list-group list-group-flush">
             <% @upcoming_races.each do |race| %>
@@ -90,14 +90,14 @@
       </div>
     </div>
   </div>
-  <div class="col-6">
+  <div class="col-md-6 col-sm-12 col-xs-12">
     <div class="card">
       <div class="card-header">
-        <h3 style="text-align:center">Past Races</h3>
+        <h3 class="centered">Past Races</h3>
       </div>
       <div class="card-body">
         <% if !@past_races.present? %>
-          <h4 style="text-align:center;">No races...yet :)</h4>
+          <h4 class="centered">No races...yet :)</h4>
         <% end %>
         <ul class="list-group list-group-flush">
             <% @past_races.each do |race| %>

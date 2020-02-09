@@ -1,17 +1,73 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- */
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .small_centered {
+    text-align: center;
+  }
+}
 
- // Custom bootstrap variables must be set or imported *before* bootstrap.
- @import "bootstrap";
+body, .background_color {
+  background-color: #F5F5F5;
+}
+
+a, .orange {
+  color: #e58a24;
+}
+
+.centered {
+  text-align: center;
+}
+
+.text_right {
+  text-align: right;
+}
+
+.text_left {
+  text-align: left;
+}
+
+.no_border {
+  border: none;
+}
+
+.black {
+  color: black;
+}
+
+.nav_height {
+  line-height: 55px;
+}
+
+.header_footer {
+  background-color: #DCDCDC;
+}
+
+.vertical_mid {
+  vertical-align: middle;
+}
+
+#alex_pic {
+  max-width: 242px;
+  margin:auto;
+  border-radius: 30px;
+}
+
+#about_body {
+  border-radius: 5px;
+}
+
+#top_project {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#bottom_project {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#footer_bar {
+  line-height:50px;
+}
