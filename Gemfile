@@ -26,6 +26,8 @@ gem 'bootstrap', '~> 4.4.1'
 
 gem 'jquery-rails'
 
+gem 'pg', '~> 0.18.4'
+
 # Deployment stuffs
 gem 'capistrano', '~> 3.11'
 gem 'capistrano-rails', '~> 1.4'
