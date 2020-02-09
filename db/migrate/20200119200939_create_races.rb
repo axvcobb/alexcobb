@@ -3,8 +3,7 @@ class CreateRaces < ActiveRecord::Migration[6.0]
     create_table :races do |t|
       t.string :name
       t.string :event
-      t.string :city
-      t.string :state
+      t.string :location
       t.datetime :race_date
       t.string :website
       t.text :comment
