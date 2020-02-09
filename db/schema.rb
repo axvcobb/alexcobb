@@ -75,8 +75,7 @@ ActiveRecord::Schema.define(version: 2020_01_20_172832) do
   create_table "races", force: :cascade do |t|
     t.string "name"
     t.string "event"
-    t.string "city"
-    t.string "state"
+    t.string "location"
     t.datetime "race_date"
     t.string "website"
     t.text "comment"
