@@ -1,15 +1,15 @@
 class EventsController < ApplicationController
 
   def create
-    @label = Label.new(label_params)
-    @label.save
+    @event = Event.new(event_params)
+    @event.save
 
-    redirect_to new_post_path
+    redirect_to new_race_path
   end
 
   private
-    def label_params
-      params.require(:label).permit(:label)
+    def event_params
+      params.require(:event).permit(:event)
     end
-    
+
 end
